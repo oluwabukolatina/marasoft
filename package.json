@@ -1,7 +1,7 @@
 {
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "name": "marasoft",
   "description": "package for marasoft APIs",
   "author": {
@@ -31,6 +31,10 @@
   ],
   "keywords": [
     "JavaScript",
+    "Marasoft",
+    "Payment",
+    "Transfer",
+    "Ussd",
     "TypeScript"
   ],
   "repository": {
