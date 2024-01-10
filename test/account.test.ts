@@ -1,8 +1,6 @@
 import { Marasoft } from '../src';
 
-export const initializeMarasoft = new Marasoft(
-  'MSFT_Enc_OXLT74NX7HX73C7C50WK6FL0O44H5M41704743111',
-);
+export const initializeMarasoft = new Marasoft('your encryption key here');
 export const createReference = () =>
   `PEN-${Math.random().toString(36).substring(2, 20)}`;
 
