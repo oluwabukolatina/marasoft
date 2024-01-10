@@ -28,7 +28,7 @@
 - Installing the project dependencies
   > Run the command below
   ```shell
-  $ npm i marasoft
+  $ npm install marasoft
   ```
 
 ## Usage
@@ -38,21 +38,78 @@ $ const  marasoft = new Marasoft('encryptionKey');
 ```
 
 ## Components
-- USSD
-    - GET USSD BANKS
+- Account
+    - GET ACCOUNT BALANCE
+      ``` 
+      $ marasoft.account.balance
+    - GET ACCOUNT STATEMENT
       ```
-      $ marasoft.ussd.getAvailableBanks()
+      $ marasoft.account.statement()
       ```
-    - GET USSD CODE - to make payment using ussd code
+    - GET ACCOUNT PAYOUT
       ```
-      $ marasoft.ussd.getUssdCode()
+      $ marasoft.account.transfers()
       ```
-## Test
+        - GET ACCOUNT COLLECTIONS
+      ```
+      $ marasoft.account.transaction()
+      ```
+- Payment
+    - CREATE DYNAMIC ACCOUNT FOR PEOPLE TO TRANSFER TO
+      ``` 
+      $ marasoft.payment.dynamicAccount()
+- Tool
+    - RESOLVE BANK ACCOUNT NUMBER
+      ``` 
+      $ marasoft.tool.resolveBank()
+    - GET BANKS
+      ```
+      $ marasoft.tool.banks()
+      ```
+    - GET TRANSACTION STATUS
+      ```
+      $ marasoft.bank.transactionStatus()
+      ```
+    - GET TRANSFER STATUS
+      ```
+      $ marasoft.tool.transferStatus()
+      ```
+- Transfer
+    - TRANSFER TO ACCOUNT NUMBER
+      ``` 
+      $ marasoft.transfer.initiate()
+    - GET BANKS
+      ```
+      $ marasoft.tool.banks()
+      ```
+    - GET TRANSACTION STATUS
+      ```
+      $ marasoft.bank.transactionStatus()
+      ```
+    - GET TRANSFER STATUS
+      ```
+      $ marasoft.tool.transferStatus()
+      ```
 
-> run the command below
+- USSD
+  - GET USSD BANKS
+    ```
+    $ marasoft.ussd.banks()
+    ```
+  - GET USSD CODE - to make payment using ussd code
+    ```
+    $ marasoft.ussd.ussdCode()
+    ```
+
+
+#### TEST
+
+- Installing the project dependencies
+  > Run the command below
   ```shell
   $ npm test
   ```
+
 
 ## Author
 - [Tina](https://github.com/oluwabukolatina)

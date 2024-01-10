@@ -1,7 +1,6 @@
 import { Axios } from 'axios';
 import * as url from '../url';
 import { AccountHistoryInterface } from '../interface';
-import { GET_ACCOUNT_TRANSACTIONS } from '../url';
 
 class Account {
   private readonly marasoftClient: Axios;
