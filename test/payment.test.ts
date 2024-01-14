@@ -1,10 +1,10 @@
-import { initializeMarasoft } from './account.test';
+import {initializeMarasoft} from "./account.test";
 
 describe('payment', () => {
   it('generateDynamicAccount', async () => {
-    const result = await initializeMarasoft.payment.dynamicAccount({
+    const result = await initializeMarasoft.payment.generateDynamicAccount({
       amount: '900',
-      transaction_ref: 'PENPAY-67ica4b5abbw03aaabb',
+      transaction_ref: 'MSF-67ica4b5abbw03aaabb',
     });
     expect(result).toHaveProperty('status', 200);
     expect(result).toHaveProperty('data');

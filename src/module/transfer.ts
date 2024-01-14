@@ -1,6 +1,7 @@
 import { Axios } from 'axios';
 import * as url from '../url';
 import { CreateTransferInterface } from '../interface';
+import FormData from 'form-data';
 
 class Transfer {
   private readonly marasoftClient: Axios;

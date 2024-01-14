@@ -1,7 +1,9 @@
+export const BASE_URL = 'https://api.marasoftpay.live/';
+
 const USSD = 'ussd/';
 const ACCOUNT_HISTORY = 'account_history/';
 export const GET_AVAILABLE_USSD_BANKS = `${USSD}get_available_banks.php`;
-export const INITIATE_USSD_TRANSACTION = `${USSD}get_ussd_code`;
+export const INITIATE_USSD_TRANSACTION = `${BASE_URL}${USSD}get_ussd_code`;
 export const GENERATE_DYNAMIC_ACCOUNT = 'generate_dynamic_account/';
 export const GET_BANKS = 'getbanks';
 export const RESOLVE_BANK_ACCOUNT = 'resolvebank';

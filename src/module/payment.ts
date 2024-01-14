@@ -1,6 +1,7 @@
 import { Axios } from 'axios';
 import * as url from '../url';
 import { GenerateDynamicAccountInterface } from '../interface';
+import FormData from 'form-data';
 
 class Payment {
   private readonly marasoftClient: Axios;
@@ -12,7 +13,7 @@ class Payment {
     this.encryptionKey = encryptionKey;
   }
 
-  async dynamicAccount(params: GenerateDynamicAccountInterface) {
+  async generateDynamicAccount(params: GenerateDynamicAccountInterface) {
     try {
       const { amount, transaction_ref } = params;
       const data = new FormData();

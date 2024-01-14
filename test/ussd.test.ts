@@ -5,7 +5,7 @@ import {
 } from './account.test';
 
 describe('ussd', () => {
-  it('banks', async () => {
+  it('gets ussd banks', async () => {
     const result = await initializeMarasoft.ussd.banks();
     expect(result).toHaveProperty('status', 200);
     expect(result).toHaveProperty('data');
@@ -19,7 +19,7 @@ describe('ussd', () => {
     );
   });
   it('gets ussd code', async () => {
-    const result = await initializeMarasoft.ussd.ussdCode(
+    const result = await initializeMarasoft.ussd.generateUssdCode(
       ussdCodePayload(createReference()),
     );
     expect(result).toHaveProperty('status', 200);

@@ -1,6 +1,8 @@
 import { Marasoft } from '../src';
 
-export const initializeMarasoft = new Marasoft('your encryption key here');
+export const initializeMarasoft = new Marasoft(
+  'your-encryption-key',
+);
 export const createReference = () =>
   `PEN-${Math.random().toString(36).substring(2, 20)}`;
 
@@ -17,16 +19,15 @@ export const transferPayload = (reference: string) => ({
 });
 export const ussdCodePayload = (reference: string) => ({
   amount: '900',
-  email_address: '090333443@penpay.com.ng',
+  email_address: '090333443@msf.com',
   phone_number: '090333443',
   redirect_url: 'http://localhost:1801/api/v1/payment/verify',
   request_type: 'live',
   user_bear_charge: 'yes',
   merchant_ref: reference,
-  name: 'Penpay Customer',
+  name: 'Customer',
   currency: 'NGN',
-  description:
-    'pen-pay payment for pension id PEN210102222439 for micro pension funding for ',
+  description: 'lorem ipsum dolor sit amet, consectetur adip',
   ref_id: reference,
   user_bank_code: '035',
 });

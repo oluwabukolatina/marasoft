@@ -1,4 +1,5 @@
 import { Axios } from 'axios';
+import FormData from 'form-data';
 import * as url from '../url';
 import { GetUssdCodeInterface } from '../interface';
 
@@ -20,7 +21,7 @@ class Ussd {
     }
   }
 
-  async ussdCode(params: GetUssdCodeInterface) {
+  async generateUssdCode(params: GetUssdCodeInterface) {
     const {
       amount,
       email_address,
@@ -39,6 +40,7 @@ class Ussd {
       const data = new FormData();
       data.append('amount', amount);
       data.append('email_address', email_address);
+      data.append('enc_key', this.encryptionKey);
       data.append('phone_number', phone_number);
       data.append('redirect_url', redirect_url);
       data.append('request_type', request_type);
@@ -49,16 +51,17 @@ class Ussd {
       data.append('description', description);
       data.append('ref_id', ref_id);
       data.append('user_bank_code', user_bank_code);
-      data.append('enc_key', this.encryptionKey);
+
+      // return await axios.request({
+      //   method: 'post',
+      //   maxBodyLength: Infinity,
+      //   url: url.INITIATE_USSD_TRANSACTION,
+      //   data,
+      // });
+
       return await this.marasoftClient.post(
         url.INITIATE_USSD_TRANSACTION,
         data,
-        //     {
-        //   ...params,
-        //   ...{
-        //     enc_key: this.encryptionKey,
-        //   },
-        // }
       );
     } catch (e) {
       return e;

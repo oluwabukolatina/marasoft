@@ -1,7 +1,7 @@
 {
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "0.0.5",
+  "version": "0.0.15",
   "name": "marasoft",
   "description": "package for marasoft APIs",
   "author": {
@@ -46,7 +46,6 @@
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.59.11",
-    "axios": "^1.6.5",
     "eslint": "^8.43.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
@@ -71,5 +70,9 @@
       "pre-commit": "npm run prettier:write && lint-staged"
     }
   },
-  "precommit": "NODE_ENV=production lint-staged"
+  "precommit": "NODE_ENV=production lint-staged",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "form-data": "^4.0.0"
+  }
 }

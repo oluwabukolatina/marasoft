@@ -1,9 +1,4 @@
-import {
-  createReference,
-  initializeMarasoft,
-  transferPayload,
-  ussdCodePayload,
-} from './account.test';
+import {createReference, initializeMarasoft, transferPayload, ussdCodePayload} from "./account.test";
 
 describe('tool', () => {
   it('resolveBank', async () => {

@@ -1,6 +1,7 @@
 import { Axios } from 'axios';
 import * as url from '../url';
 import * as type from '../interface';
+import FormData from 'form-data';
 
 class Tool {
   private readonly marasoftClient: Axios;
@@ -12,6 +13,16 @@ class Tool {
     this.encryptionKey = encryptionKey;
   }
 
+  async banks() {
+    try {
+      const data = new FormData();
+      data.append('enc_key', this.encryptionKey);
+      return await this.marasoftClient.post(url.GET_BANKS, data);
+    } catch (e) {
+      return e;
+    }
+  }
+
   async resolveBank(params: type.ResolveBankAccountInterface) {
     try {
       const { bank_code, account_number } = params;
@@ -20,16 +31,6 @@ class Tool {
       data.append('bank_code', bank_code);
       data.append('enc_key', this.encryptionKey);
       return await this.marasoftClient.post(url.RESOLVE_BANK_ACCOUNT, data);
-    } catch (e) {
-      return e;
-    }
-  }
-
-  async banks() {
-    try {
-      const data = new FormData();
-      data.append('enc_key', this.encryptionKey);
-      return await this.marasoftClient.post(url.GET_BANKS, data);
     } catch (e) {
       return e;
     }
